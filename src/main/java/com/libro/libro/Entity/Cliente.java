@@ -8,16 +8,15 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Libro")
+@Table(name = "clientes")
 @Data
-public class Libro {
+public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
-
+    private Long id_cliente;
     private String nombre;
-    private String genero;
-    private String descripcion;
-    private String image;
-    private String autor;
+    private String apellidos;
+    private String dni;
+    private String correo;
+
 }

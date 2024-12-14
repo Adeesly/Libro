@@ -26,6 +26,11 @@ public class LibroServiceImpl implements LibroService {
     }
 
     @Override
+    public Libro actualizarLibro(Libro libro) {
+        return libroRepository.save(libro); 
+    }
+
+    @Override
     public Libro agregarLibro(Libro libro) {
         return libroRepository.save(libro);
     }

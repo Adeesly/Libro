@@ -1,5 +1,7 @@
 package com.libro.libro.Entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,16 +10,17 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "Libro")
+@Table(name = "prestamos")
 @Data
-public class Libro {
+public class Prestamo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+    private Long id_prestamo;
 
-    private String nombre;
-    private String genero;
-    private String descripcion;
-    private String image;
-    private String autor;
+    private Long id_libro;
+    private Long id_cliente;
+    private Date fecha_prestamo;
+    private Date fecha_devolucion;
+    private String estado;
+
 }

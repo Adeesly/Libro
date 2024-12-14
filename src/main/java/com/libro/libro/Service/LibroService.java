@@ -13,6 +13,8 @@ public interface LibroService {
 
         Optional<Libro> obtenerLibroPorCodigo(Long codigo);
 
+        Libro actualizarLibro(Libro libro);
+
         Libro agregarLibro(Libro libro);
 
         void eliminarLibro(Long codigo);

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,14 +36,29 @@ public class LibroController {
 
     @PostMapping("/registrar")
     public Libro registrarLibro(@RequestBody LibroDTO libroDTO) {
-        // Mapea el DTO a la entidad Libro
+
         Libro libro = new Libro();
         libro.setNombre(libroDTO.getNombre());
         libro.setGenero(libroDTO.getGenero());
         libro.setDescripcion(libroDTO.getDescripcion());
+        libro.setImage(libroDTO.getImage());
         libro.setAutor(libroDTO.getAutor());
 
         return libroService.agregarLibro(libro);
+    }
+
+    @PutMapping("/{codigo}") 
+    public Libro actualizarLibro(@PathVariable Long codigo, @RequestBody LibroDTO libroDTO) {
+  
+        Libro libro = new Libro();
+        libro.setCodigo(codigo);
+        libro.setNombre(libroDTO.getNombre());
+        libro.setGenero(libroDTO.getGenero());
+        libro.setDescripcion(libroDTO.getDescripcion());
+        libro.setImage(libroDTO.getImage());
+        libro.setAutor(libroDTO.getAutor());
+
+        return libroService.actualizarLibro(libro);
     }
 
     @DeleteMapping("/{codigo}")
