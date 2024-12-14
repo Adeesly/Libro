@@ -46,7 +46,7 @@ public class PrestamoController {
         return prestamoService.agregarPrestamo(prestamo1);
     }
 
-    @PutMapping("/{codigo}")
+    @PutMapping("/actualizar")
     public Prestamo actualizarPrestamo(@PathVariable Long id_prestamo, @RequestBody Prestamo prestamo) {
 
         Prestamo prestamo1 = new Prestamo();
@@ -59,7 +59,7 @@ public class PrestamoController {
         return prestamoService.agregarPrestamo(prestamo1);
     }
 
-    @DeleteMapping("/{codigo}")
+    @DeleteMapping("/eliminar")
     public void eliminarPrestamo(@PathVariable Long id_prestamo) {
         prestamoService.eliminarPrestamo(id_prestamo);
     }
