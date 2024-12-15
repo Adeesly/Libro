@@ -28,7 +28,7 @@ public class ClienteController {
         return clienteService.listarClientes();
     }
 
-    @GetMapping("/{codigo}")
+    @GetMapping("/{id_cliente}")
     public Optional<Cliente> obtenerClientePorID(@PathVariable Long id_cliente) {
         return clienteService.obtenerClientePorID(id_cliente);
     }
@@ -46,7 +46,7 @@ public class ClienteController {
     }
 
 
-    @PutMapping("/actualizar/{codigo}")
+    @PutMapping("/actualizar/{id_cliente}")
     public Cliente actualizarCliente(@PathVariable Long id_cliente, @RequestBody Cliente cliente) {
 
         Cliente cliente1 = new Cliente();
@@ -59,7 +59,7 @@ public class ClienteController {
         return clienteService.agregarCliente(cliente1);
     }
 
-    @DeleteMapping("/eliminar/{codigo}")
+    @DeleteMapping("/eliminar/{id_cliente}")
     public void eliminarCliente(@PathVariable Long id_cliente) {
         clienteService.eliminarCliente(id_cliente);
     }

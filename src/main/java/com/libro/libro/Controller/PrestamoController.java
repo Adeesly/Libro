@@ -28,7 +28,7 @@ public class PrestamoController {
         return prestamoService.listarPrestamo();
     }
 
-    @GetMapping("/{codigo}")
+    @GetMapping("/{id_prestamo}")
     public Optional<Prestamo> obtenerPrestamoPorID(@PathVariable Long id_prestamo) {
         return prestamoService.obtenerPrestamoPorID(id_prestamo);
     }
@@ -46,7 +46,7 @@ public class PrestamoController {
         return prestamoService.agregarPrestamo(prestamo1);
     }
 
-    @PutMapping("/actualizar/{codigo}")
+    @PutMapping("/actualizar/{id_prestamo}")
     public Prestamo actualizarPrestamo(@PathVariable Long id_prestamo, @RequestBody Prestamo prestamo) {
 
         Prestamo prestamo1 = new Prestamo();
@@ -59,7 +59,7 @@ public class PrestamoController {
         return prestamoService.agregarPrestamo(prestamo1);
     }
 
-    @DeleteMapping("/eliminar/{codigo}")
+    @DeleteMapping("/eliminar/{id_prestamo}")
     public void eliminarPrestamo(@PathVariable Long id_prestamo) {
         prestamoService.eliminarPrestamo(id_prestamo);
     }
