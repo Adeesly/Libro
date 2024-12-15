@@ -46,7 +46,7 @@ public class ClienteController {
     }
 
 
-    @PutMapping("/actualizar")
+    @PutMapping("/actualizar/{codigo}")
     public Cliente actualizarCliente(@PathVariable Long id_cliente, @RequestBody Cliente cliente) {
 
         Cliente cliente1 = new Cliente();
@@ -59,7 +59,7 @@ public class ClienteController {
         return clienteService.agregarCliente(cliente1);
     }
 
-    @DeleteMapping("/eliminar")
+    @DeleteMapping("/eliminar/{codigo}")
     public void eliminarCliente(@PathVariable Long id_cliente) {
         clienteService.eliminarCliente(id_cliente);
     }

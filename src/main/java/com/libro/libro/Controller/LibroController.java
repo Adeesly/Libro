@@ -47,7 +47,7 @@ public class LibroController {
         return libroService.agregarLibro(libro);
     }
 
-    @PutMapping("/actualizar") 
+    @PutMapping("/actualizar/{codigo}") 
     public Libro actualizarLibro(@PathVariable Long codigo, @RequestBody LibroDTO libroDTO) {
   
         Libro libro = new Libro();
@@ -61,7 +61,7 @@ public class LibroController {
         return libroService.actualizarLibro(libro);
     }
 
-    @DeleteMapping("/eliminar")
+    @DeleteMapping("/eliminar/{codigo}")
     public void eliminarLibro(@PathVariable Long codigo) {
         libroService.eliminarLibro(codigo);
     }
