@@ -13,7 +13,7 @@ public interface PrestamoService {
 
         Optional<Prestamo> obtenerPrestamoPorID(Long id_prestamo);
 
-        Prestamo actualizarPrestamo(Prestamo prestamo);
+        Prestamo actualizarPrestamo(Prestamo prestamo, Long prestamo_id);
 
         Prestamo agregarPrestamo(Prestamo prestamo);
 

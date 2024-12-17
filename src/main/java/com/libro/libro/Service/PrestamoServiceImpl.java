@@ -26,8 +26,21 @@ public class PrestamoServiceImpl implements PrestamoService{
     }
 
     @Override
-    public Prestamo actualizarPrestamo(Prestamo prestamo) {
-       return prestamoRepository.save(prestamo);
+    public Prestamo actualizarPrestamo(Prestamo prestamo, Long prestamo_id) {
+        var prestamoGuardado = prestamoRepository.findById(prestamo_id).orElse(null);
+
+        var resultado = new Prestamo();
+
+        if (prestamoGuardado != null) {
+            prestamoGuardado.setId_libro(prestamo.getId_libro());
+            prestamoGuardado.setId_cliente(prestamo.getId_cliente());
+            prestamoGuardado.setFecha_prestamo(prestamo.getFecha_prestamo());
+            prestamoGuardado.setFecha_devolucion(prestamo.getFecha_devolucion());
+            prestamoGuardado.setEstado(prestamo.getEstado());
+            resultado = prestamoRepository.save(prestamoGuardado);
+        }
+
+       return resultado;
     }
 
     @Override
