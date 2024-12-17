@@ -28,11 +28,10 @@ public class ClienteController {
         return clienteService.listarClientes();
     }
 
-    @GetMapping("/{codigo}")
-    public Optional<Cliente> obtenerClientePorID(@PathVariable Long id_cliente) {
+    @GetMapping("/{id_cliente}")
+    public Cliente obtenerClientePorID(@PathVariable Long id_cliente) {
         return clienteService.obtenerClientePorID(id_cliente);
     }
-
     @PostMapping("/registrar")
     public Cliente registrarCliente(@RequestBody Cliente cliente) {
 

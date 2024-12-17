@@ -13,7 +13,7 @@ public interface ClienteService {
 
     List<Cliente>listarClientes();
 
-    Optional<Cliente> obtenerClientePorID(Long id_cliente);
+    Cliente obtenerClientePorID(Long id_cliente);
 
     Cliente actualizarCliente(Cliente cliente);
 
